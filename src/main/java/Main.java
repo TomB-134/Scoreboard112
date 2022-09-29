@@ -4,12 +4,13 @@ import net.querz.nbt.tag.*;
 import types.Player;
 import types.ScoreboardEntry;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main {
-    static String worldSave = "C:\\Users\\Thoma\\OneDrive\\Desktop\\Minecraft\\PolyMC\\instances\\1.12.2\\.minecraft\\saves\\quasicraft";
+    static String worldSave = "WORLD SAVE HERE";
 
 
     public static void main(String[] args) throws IOException {
@@ -19,7 +20,7 @@ public class Main {
         types.Player[] players = statHandler.generatePlayers();
 
         ScoreboardHandler scHandler = new ScoreboardHandler();
-        ArrayList<ScoreboardEntry> scoreboardEntries = scHandler.generateCreateScoreboards();
+        ArrayList<ScoreboardEntry> scoreboardEntries = scHandler.createScoreboards();
 
         createScoreboardFile(scoreboardEntries, players);
     }
@@ -83,7 +84,7 @@ public class Main {
         ListTag<CompoundTag> teams = new ListTag<>(CompoundTag.class);
         data.put("Teams", teams);
 
-        NBTUtil.write(rootTag, "scoreboard.dat");
+        NBTUtil.write(rootTag, worldSave + "\\data\\scoreboard.dat");
 
         return null;
     }

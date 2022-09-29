@@ -22,16 +22,18 @@ public class StatHandler {
     }
 
     public Player[] generatePlayers() throws NullPointerException {
+        System.out.println("Gathering player data");
         File[] listOfFiles = new File(this.worldSaveDir + "\\stats").listFiles();
         String[] playerNames = new String[listOfFiles.length];
 
-
+        System.out.println("Gathering usernames from UUIDs");
         for (int i = 0; i < listOfFiles.length; i++) {
             String UUID = listOfFiles[i].getName().split("\\.")[0];
             String username = mojangAPI.getPlayerProfile(UUID).getUsername();
             playerNames[i] = username;
         }
 
+        System.out.println("Extracting statistics");
         ArrayList<String[]> statsList = new ArrayList<>();
 
         for (File statFile : listOfFiles) {

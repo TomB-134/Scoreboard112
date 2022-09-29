@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ScoreboardHandler {
 
-    public ArrayList<ScoreboardEntry> generateCreateScoreboards() throws IOException {
+    public ArrayList<ScoreboardEntry> createScoreboards() throws IOException {
         URL url = this.getClass().getClassLoader().getResource("stats");
         File file = new File(url.getPath());
 
