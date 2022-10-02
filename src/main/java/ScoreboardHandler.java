@@ -16,7 +16,7 @@ public class ScoreboardHandler {
         List<String> statFileLines = Files.readAllLines(file.toPath());
 
         ArrayList<ScoreboardEntry> scoreboardEntries = new ArrayList<>();
-        int id = 1;
+        int id = 0;
         for (String stat : statFileLines) {
             ScoreboardEntry scoreboardEntry = new ScoreboardEntry(stat, generateName(stat), String.valueOf(id));
             scoreboardEntries.add(scoreboardEntry);

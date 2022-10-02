@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main {
-    static String worldSave = "WORLD SAVE HERE";
+    static String worldSave = "C:\\Users\\Thoma\\OneDrive\\Desktop\\Minecraft\\Worlds\\112SurvivalWorld\\world";
 
 
     public static void main(String[] args) throws IOException {
